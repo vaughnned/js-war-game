@@ -1,9 +1,9 @@
-const suit = ["Hearts", "Diamonds", "Clubs", "Spades"];
+const suitArr = ["Hearts", "Diamonds", "Clubs", "Spades"];
 
-const heartsArr = [];
-const diamondsArr = [];
-const spadesArr = [];
-const clubsArr = [];
+// const heartsArr = [];
+// const diamondsArr = [];
+// const spadesArr = [];
+// const clubsArr = [];
 
 export const cards = [
   "Ace",
@@ -21,18 +21,29 @@ export const cards = [
   "King",
 ];
 
-let card1 = new Card({
-  suit: "Heart",
-});
+const deck = [];
 
-function Card({ value, suit } = {}) {
+let card = new Card();
+
+function Card({ value, suit = "Hearts" } = {}) {
+  this.suit = suit;
   for (let i = 0; i < cards.length; i++) {
-    if (!heartsArr.includes(value) && suit === "Hearts") {
-      card.value = cards[i];
-      heartsArr.push(card.value);
+    value = cards[i];
+    this.value = value;
+    if (!deck[i].includes(this.value) && !deck[i].includes(this.suit)) {
+      deck.push(this);
+    } else if (deck[i].includes(this.suit)) {
+      for (let s = 0; s < suitArr.length; i++) {
+        this.suit = suitArr[i];
+        deck.push(this);
+      }
+    } else if (deck[i].includes(this.value)) {
+      for (let i = 0; i < cards.length; i++) {
+        this.value = cards[i];
+        deck.push(this);
+      }
     }
-
-    return heartsArr;
   }
+  return deck;
 }
-console.log(card);
+console.log(deck);
