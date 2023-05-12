@@ -23,25 +23,29 @@ export const cards = [
 
 const deck = [];
 
-let card = new Card();
+let card = new Card({
+  value: "Ace",
+  suit: "Hearts",
+});
 
-function Card({ value, suit = "Hearts" } = {}) {
+function Card({ value, suit } = {}) {
   this.suit = suit;
   for (let i = 0; i < cards.length; i++) {
     value = cards[i];
     this.value = value;
     if (!deck[i].includes(this.value) && !deck[i].includes(this.suit)) {
       deck.push(this);
-    } else if (deck[i].includes(this.suit)) {
+    } else if (deck[i].includes(this.suit) && !deck[i].includes(this.value)) {
       for (let s = 0; s < suitArr.length; i++) {
         this.suit = suitArr[i];
         deck.push(this);
       }
-    } else if (deck[i].includes(this.value)) {
+    } else if (deck[i].includes(this.value) && !deck[i].includes(this.suit)) {
       for (let i = 0; i < cards.length; i++) {
         this.value = cards[i];
         deck.push(this);
       }
+    } else if (deck[i].includes(this.value) && deck[i].includes(this.suit)) {
     }
   }
   return deck;

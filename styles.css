@@ -10,7 +10,6 @@ h1 {
   color: red;
   text-align: center;
   font-size: 5em;
-  font-family: Asgard;
 }
 
 main {
@@ -20,17 +19,38 @@ main {
   display: flex;
 }
 
+.player-title {
+  color: red;
+  font-size: 1.5em;
+  display: flex;
+}
+
+#playerOneTitle {
+  display: block;
+  text-align: left;
+  margin-left: none;
+  padding-left: 234px;
+}
+
+#playerTwoTitle {
+  display: block;
+  width: 200px;
+  margin-left: auto;
+  margin-right: 0px;
+  padding-right: 234px;
+  text-align: right;
+}
+
 #player1 {
-  background-color: white;
-  max-width: 30vw;
-  margin: 20px 20px 10em 20px;
+  color: white;
+  width: 30vw;
+  margin-right: auto;
   padding: 20px;
   border-style: solid;
 }
 
 #player2 {
   display: block;
-  text-align: right;
   color: white;
   width: 30vw;
   margin-left: auto;
