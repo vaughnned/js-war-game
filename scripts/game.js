@@ -1,5 +1,5 @@
 import { Card } from "./card.mjs";
-import { Deck } from "./deck.mjs";
+import { Deck } from "./deck.js";
 import { Player } from "./player.mjs";
 
 function Game() {

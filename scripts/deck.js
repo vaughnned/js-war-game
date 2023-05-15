@@ -1,4 +1,4 @@
-import { Card, CARD_SUITS, CARD_VALUES } from "./card.mjs";
+import { Card, CARD_SUITS, CARD_VALUES } from "./card.js";
 
 export function Deck() {
   this.cards = [];
