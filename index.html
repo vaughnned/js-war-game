@@ -9,13 +9,23 @@
   </head>
   <body>
     <h1>WAR</h1>
-    <div class="player-title">
-      <h2 id="playerOneTitle">P1</h2>
-      <h2 id="playerTwoTitle">P2</h2>
-    </div>
+
     <main>
-      <div id="player1"></div>
-      <div id="player2"></div>
+      <div id="player1" class="player">
+        <h2>Player 1</h2>
+        <div class="card">K-H</div>
+        <div class="stats">26 cards in deck</div>
+      </div>
+      <div id="gameConsole">
+        <div id="gameStatus">Some game info</div>
+        <div class="actions">
+          <button id="playBtn">Play</button>
+        </div>
+      </div>
+      <div id="player2" class="player">
+        <h2>Player 2</h2>
+        <div class="card">7-S</div>
+      </div>
     </main>
 
     <script src="main.mjs"></script>

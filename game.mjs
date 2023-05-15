@@ -16,3 +16,25 @@ function Game() {
 }
 
 const game = new Game();
+
+document.getElementById("playerOneTitle").innerText = game.players[0].name;
+document.getElementById("playerTwoTitle").innerText = game.players[1].name;
+
+function playHandler() {
+  // card1 = player1.deck.draw()
+  // card2 = player2.deck.draw()
+
+  p1Card.innerText = card1.suit + "-" + card1.value;
+
+  if (card1.num === card2.num) {
+    // WAR
+    // stash 3 cards
+    playHandler();
+  } else if (card1.num < card2.num) {
+    // P1 wins
+    player1.deck.addCard(card1);
+    player1.deck.addCard(card2);
+  } else {
+    // P2 wins
+  }
+}
