@@ -14,6 +14,7 @@ Deck.prototype.fillStandardCards = function () {
 
 Deck.prototype.shuffle = function () {
   // fisher yates algorithm
+  // https://www.tutorialspoint.com/what-is-fisher-yates-shuffle-in-javascript
   let arr = this.cards;
   let i = arr.length;
   while (--i > 0) {
