@@ -2,6 +2,7 @@
 // "use strict";
 import { Game } from "./game.mjs";
 const game = new Game();
+let roundCt = 0;
 
 document.querySelector("#player1 h2").innerText = game.p1.name;
 document.querySelector("#player2 h2").innerText = game.p2.name;
@@ -14,13 +15,24 @@ let p2Stats = document.querySelector("#player2 .stats");
 let winner = document.querySelector("#gameStatus");
 let pot = document.querySelector("#potCount");
 
+function gameOver() {
+  winner.innerText = game.p1.name + " Wins The Game!";
+  document.getElementById("playBtn").disabled = true;
+  console.log(roundCt + " rounds");
+}
+
 function playHandler() {
+  roundCt++;
   let card1 = game.p1.deck.draw();
   let card2 = game.p2.deck.draw();
 
+  if (!game.play(card1, card2)) {
+    gameOver();
+    return;
+  }
+
   p1Card.innerText = card1.toString();
   p2Card.innerText = card2.toString();
-  console.log(card1, card2);
 
   if (card1.num === card2.num) {
     // WAR
@@ -28,8 +40,14 @@ function playHandler() {
     // stash 3 cards
     game.deck.addCard(card1);
     game.deck.addCard(card2);
-    game.deck.addCards(game.p1.deck.drawThree());
-    game.deck.addCards(game.p2.deck.drawThree());
+    let stash1 = game.p1.deck.drawThree();
+    let stash2 = game.p2.deck.drawThree();
+    if (!game.play(stash1, stash2)) {
+      gameOver();
+      return;
+    }
+    game.deck.addCards(stash1);
+    game.deck.addCards(stash2);
   } else if (card1.num > card2.num) {
     // P1 wins
     winner.innerText = game.p1.name + " wins the hand!";
@@ -55,4 +73,11 @@ function updateStats() {
 }
 
 document.querySelector("#playBtn").addEventListener("click", playHandler);
-// })();
+
+function autoPlay() {
+  while (!game.winner && roundCt < 500) {
+    playHandler();
+  }
+}
+
+document.querySelector("h1").addEventListener("click", autoPlay);
