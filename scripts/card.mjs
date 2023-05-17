@@ -27,6 +27,10 @@ export const CARD_SUITS = {
   S: 3,
 };
 
+Card.prototype.toString = function () {
+  return this.value + "-" + this.suit;
+};
+
 // let card = new Card({
 //   value: "Ace",
 //   suit: "Hearts",

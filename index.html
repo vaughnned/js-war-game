@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>War Game</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
     <h1>WAR</h1>
@@ -13,25 +13,27 @@
     <main>
       <div id="player1" class="player">
         <h2>Player 1</h2>
-        <div class="card">K-H</div>
+        <div class="card">P1</div>
         <div class="stats">26 cards in deck</div>
       </div>
       <div id="gameConsole">
-        <div id="gameStatus">Some game info</div>
+        <div id="gameStatus">Start!</div>
         <div class="actions">
           <button id="playBtn">Play</button>
         </div>
+        <div id="potCount">0 cards in pot</div>
       </div>
       <div id="player2" class="player">
         <h2>Player 2</h2>
-        <div class="card">7-S</div>
+        <div class="card">P2</div>
+        <div class="stats">26 cards in deck</div>
       </div>
     </main>
 
-    <script src="main.mjs"></script>
-    <!-- <script src="card.js"></script>
-    <script src="deck.js"></script>
-    <script src="player.js"></script> -->
-    <script src="game.mjs" type="module"></script>
+    <script src="scripts/main.mjs" type="module"></script>
+    <!-- <script src="card.mjs"></script>
+    <script src="deck.mjs"></script>
+    <script src="player.mjs"></script> -->
+    <script src="scripts/game.mjs" type="module"></script>
   </body>
 </html>
