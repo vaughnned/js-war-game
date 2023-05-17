@@ -1,6 +1,4 @@
-// (function () {
-// "use strict";
-import { Game } from "./game.mjs";
+import { Game } from "./game.js";
 const game = new Game();
 let roundCt = 0;
 

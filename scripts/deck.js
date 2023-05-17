@@ -1,4 +1,4 @@
-import { Card, CARD_SUITS, CARD_VALUES } from "./card.mjs";
+import { Card, CARD_SUITS, CARD_VALUES } from "./card.js";
 
 export function Deck() {
   this.cards = [];
@@ -38,16 +38,3 @@ Deck.prototype.addCard = function (card) {
 Deck.prototype.addCards = function (cards) {
   this.cards = cards.concat(this.cards);
 };
-
-// let deck = new Deck();
-// deck.shuffle();
-// console.log(deck);
-
-// function shuffle(deck) {
-//     return deck.sort(function () {
-//       return Math.random() - 0.5;
-//     });
-//   }
-
-//   shuffle(deck);
-//   console.log(shuffle(deck));

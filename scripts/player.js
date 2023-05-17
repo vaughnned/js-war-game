@@ -1,4 +1,4 @@
-import { Deck } from "./deck.mjs";
+import { Deck } from "./deck.js";
 
 export function Player(name) {
   this.name = name;

@@ -1,6 +1,6 @@
-import { Card } from "./card.mjs";
-import { Deck } from "./deck.mjs";
-import { Player } from "./player.mjs";
+import { Card } from "./card.js";
+import { Deck } from "./deck.js";
+import { Player } from "./player.js";
 
 export function Game() {
   this.deck = new Deck();
