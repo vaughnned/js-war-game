@@ -14,7 +14,11 @@ let winner = document.querySelector("#gameStatus");
 let pot = document.querySelector("#potCount");
 
 function gameOver() {
-  winner.innerText = game.p1.name + " Wins The Game!";
+  if (game.p1.deck.cards.length > game.p2.deck.cards.length) {
+    winner.innerText = game.p1.name + " Wins The Game!";
+  } else if (game.p1.deck.cards.length < game.p2.deck.cards.length) {
+    winner.innerText = game.p2.name + " Wins The Game!";
+  }
   document.getElementById("playBtn").disabled = true;
   console.log(roundCt + " rounds");
 }
